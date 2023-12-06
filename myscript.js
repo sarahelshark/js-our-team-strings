@@ -12,7 +12,7 @@ BONUS 2:
 Inserire un form per l’aggiunta di un elemento alla lista.
 */
 
-//arrai di stringhe contenente nome dei membri del team
+//arrai di stringhe contenente nome dei membri del team-milestone 0 
 const listTeam  = ["Tommy", "Max", "Milky", "Finn", "Jake", "Gabibbo"];
 for (let i = 0; i < listTeam.length; i++){
      const teamMate = listTeam [i];
