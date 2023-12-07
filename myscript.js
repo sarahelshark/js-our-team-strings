@@ -23,7 +23,7 @@ for (let i = 0; i < listTeam.length; i++){
 
      const individual = [];  //estraggo da array i nomi per metterli dentro il text node ad un ad uno, rachiudo in fx??
      individual.push(teamMate)
-     console.log(individual + "ok")
+     console.log(individual + ", pushato")
 
 
 //milestone 1
