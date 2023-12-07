@@ -14,9 +14,16 @@ Inserire un form per l’aggiunta di un elemento alla lista.
 //milestone 0
 //arrai di stringhe contenente nome dei membri del team
 const listTeam  = ["Tommy", "Max", "Milky", "Finn", "Jake", "Gabibbo"];
+console.log(listTeam);
+
+
 for (let i = 0; i < listTeam.length; i++){
      const teamMate = listTeam [i];
      console.log(teamMate);//loggo per vederlo 
+
+     const individual = [];  //estraggo da array i nomi per metterli dentro il text node ad un ad uno, rachiudo in fx??
+     individual.push(teamMate)
+     console.log(individual + "ok")
 
 
 //milestone 1
@@ -28,7 +35,7 @@ function addCards() { // ()teamMate, listTeam)dichiaro i parametri per il moment
      //console.log(cardElement.outerHTML);//loggo per vederlo
 
      //aggiungo dei contenuti di prova
-     const cardContent = document.createTextNode(listTeam);
+     const cardContent = document.createTextNode(individual);
      console.log(cardContent); //da cambiare con i nomi della array!!!!!! e B
      //inserisco il nodo testuale dentro il div
      cardElement.appendChild(cardContent);
@@ -41,7 +48,7 @@ addCards()//richiamo la funzione per vedere se funziona
 
 }
 
- 
+
    
   //B//inserisco al suo interno un div con classe card e dentro nome+foto del membro del team + descrizione del compito
         
