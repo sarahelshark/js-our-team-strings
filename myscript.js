@@ -21,9 +21,9 @@ for (let i = 0; i < listTeam.length; i++){
      const teamMate = listTeam [i];
      console.log(teamMate);//loggo per vederlo 
 
-     const individual = [];  //estraggo da array i nomi per metterli dentro il text node ad un ad uno, rachiudo in fx??
-     individual.push(teamMate)
-     console.log(individual + ", pushato")
+     const individual = [];//estraggo da array i nomi per metterli dentro il text node ad un ad uno
+     individual.push(teamMate);
+     console.log(individual + ", pushato");
 
 
 //milestone 1
@@ -41,7 +41,7 @@ function addCards() { // ()teamMate, listTeam)dichiaro i parametri per il moment
      cardElement.appendChild(cardContent);
 //inserisco tutto nella dom 
 document.querySelector(".row.p-3.flex-row").appendChild(cardElement);
-return;
+return cardElement;
 }
 
 addCards()//richiamo la funzione per vedere se funziona 
@@ -49,7 +49,6 @@ addCards()//richiamo la funzione per vedere se funziona
 }
 
 
-   
-  //B//inserisco al suo interno un div con classe card e dentro nome+foto del membro del team + descrizione del compito
+  //B//inserisco al suo interno un div con classe card e dentro nome+foto del membro del team + descrizione del compito (ui)
         
        
