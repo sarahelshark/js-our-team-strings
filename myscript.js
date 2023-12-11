@@ -36,8 +36,15 @@ for (let i = 0; i < listTeam.length; i++){
 
 //milestone 1
 //racchiudo dentro funzione che mi crea le 6 carte ? 
+/**
+   * # generate ordinary member card
+   * This function generates a DOM element
+   * with an eventListener
+   * @param {string} individual The member name
+   * @returns Object
+   * */
 function addCards() { // ()teamMate, listTeam)dichiaro i parametri per il momento di manipolazione elementi array successivo
-//creo un div con classe col-3, ancora vuoto di contenuti 
+     //creo un div con classe col-3, ancora vuoto di contenuti 
      const cardElement = document.createElement('div');
      cardElement.className = "col-4 card p-4";
      //console.log(cardElement.outerHTML);//loggo per vederlo //classlist.add
@@ -47,19 +54,19 @@ function addCards() { // ()teamMate, listTeam)dichiaro i parametri per il moment
      console.log(cardContent); //da cambiare con i nomi della array!!!!!! e B
      //inserisco il nodo testuale dentro il div
      cardElement.appendChild(cardContent);  //o anche solo append
-//inserisco tutto nella dom 
-document.querySelector(".row.p-3.flex-row").appendChild(cardElement);
-
-//milestone3
-cardElement.addEventListener('click', function(e){
+     //inserisco tutto nella dom 
+     document.querySelector(".row.p-3.flex-row").appendChild(cardElement);
+     //milestone3
+     cardElement.addEventListener('click', function(e){
      console.log(e.target,this);
      
      //e.target.className oppure classlist.add
      this.classList.toggle('bg-primary');
      this.classList.toggle('text-white');
 
-})
-return cardElement
+      })
+
+ return cardElement
 
 }
 
@@ -70,33 +77,40 @@ addCards()//richiamo la funzione per vedere se funziona
 
 
 
-//B//inserisco al suo interno un div con classe card e dentro nome+foto del membro del team + descrizione del compito (ui)
+//B//inserisco al suo interno un div con classe card e dentro nome+foto del membro del team + descrizione del compito (ui)--ancora da fare
         
-   document.getElementById('addMember').addEventListener('submit',function(e){
+
+//event listener form
+document.getElementById('addMember').addEventListener('submit',function(e){
      e.preventDefault();
      //console.log('it worked');
      const newMember = document.getElementById('newMember').value;
      console.log(newMember);
 
-     
-  function addNewMembers(){
+  /**
+   * # generate NEW member card
+   * This function generates a DOM element
+   * with an eventListener
+   * @param {string} newMember The member name
+   * @returns Object
+   * */
+   function addNewMembers(){
      const cardElement = document.createElement('div');
      cardElement.className = "col-4 card p-4";
      const cardContent = document.createTextNode(newMember);
      cardElement.appendChild(cardContent);  
      document.querySelector(".row.p-3.flex-row").appendChild(cardElement);
-
-//toggle
-cardElement.addEventListener('click', function(e){
+     //toggle
+     cardElement.addEventListener('click', function(e){
      console.log(e.target,this);
      
-     //e.target.className oppure classlist.add
      this.classList.toggle('bg-primary');
      this.classList.toggle('text-white');
 
-})
-  }
-  addNewMembers();
+     })
+     return cardElement;
+   }
+   addNewMembers();
 
 
 })    
