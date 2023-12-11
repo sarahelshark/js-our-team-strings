@@ -74,5 +74,29 @@ addCards()//richiamo la funzione per vedere se funziona
         
    document.getElementById('addMember').addEventListener('submit',function(e){
      e.preventDefault();
-     console.log('it worked')
-   })    
+     //console.log('it worked');
+     const newMember = document.getElementById('newMember').value;
+     console.log(newMember);
+
+     
+  function addNewMembers(){
+     const cardElement = document.createElement('div');
+     cardElement.className = "col-4 card p-4";
+     const cardContent = document.createTextNode(newMember);
+     cardElement.appendChild(cardContent);  
+     document.querySelector(".row.p-3.flex-row").appendChild(cardElement);
+
+//toggle
+cardElement.addEventListener('click', function(e){
+     console.log(e.target,this);
+     
+     //e.target.className oppure classlist.add
+     this.classList.toggle('bg-primary');
+     this.classList.toggle('text-white');
+
+})
+  }
+  addNewMembers();
+
+
+})    
