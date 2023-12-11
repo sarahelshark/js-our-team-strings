@@ -13,18 +13,26 @@ Inserire un form per l’aggiunta di un elemento alla lista.
 */
 //milestone 0
 //arrai di stringhe contenente nome dei membri del team
-const listTeam  = ["Tommy", "Max", "Milky", "Finn", "Jake", "Gabibbo"];
+
+const listTeam  = [
+     "Tommy", 
+     "Max",
+     "Milky", 
+     "Finn", 
+     "Jake", 
+     "Gabibbo"
+];
 console.log(listTeam);
 
 
 for (let i = 0; i < listTeam.length; i++){
      const teamMate = listTeam [i];
-     console.log(teamMate);//loggo per vederlo 
+     console.log(teamMate);//loggo per vederlo, ok 
 
      const individual = [];//estraggo da array i nomi per metterli dentro il text node ad un ad uno
      individual.push(teamMate);
      console.log(individual + ", pushato");
-
+    
 
 //milestone 1
 //racchiudo dentro funzione che mi crea le 6 carte ? 
@@ -32,19 +40,31 @@ function addCards() { // ()teamMate, listTeam)dichiaro i parametri per il moment
 //creo un div con classe col-3, ancora vuoto di contenuti 
      const cardElement = document.createElement('div');
      cardElement.className = "col-4 card p-4";
-     //console.log(cardElement.outerHTML);//loggo per vederlo
+     //console.log(cardElement.outerHTML);//loggo per vederlo //classlist.add
 
      //aggiungo dei contenuti di prova
      const cardContent = document.createTextNode(individual);
      console.log(cardContent); //da cambiare con i nomi della array!!!!!! e B
      //inserisco il nodo testuale dentro il div
-     cardElement.appendChild(cardContent);
+     cardElement.appendChild(cardContent);  //o anche solo append
 //inserisco tutto nella dom 
 document.querySelector(".row.p-3.flex-row").appendChild(cardElement);
-return cardElement;
+
+//milestone3
+cardElement.addEventListener('click', function(e){
+     console.log(e.target,this);
+     
+     //e.target.className oppure classlist.add
+     this.classList.toggle('bg-primary');
+     this.classList.toggle('text-white');
+
+})
+return cardElement
+
 }
 
 addCards()//richiamo la funzione per vedere se funziona 
+
 
 }
 
