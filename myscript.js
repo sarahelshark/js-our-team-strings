@@ -69,6 +69,10 @@ addCards()//richiamo la funzione per vedere se funziona
 }
 
 
-  //B//inserisco al suo interno un div con classe card e dentro nome+foto del membro del team + descrizione del compito (ui)
+
+//B//inserisco al suo interno un div con classe card e dentro nome+foto del membro del team + descrizione del compito (ui)
         
-       
+   document.getElementById('addMember').addEventListener('submit',function(e){
+     e.preventDefault();
+     console.log('it worked')
+   })    
